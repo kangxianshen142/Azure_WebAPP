@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: kangxianshenazurewebapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kangxianshenazurewebapp
+  template:
+    metadata:
+      labels:
+        app: kangxianshenazurewebapp 
+    spec:
+      containers:
+        - name: kangxianshenazurewebapp 
+          image: qytangcr.azurecr.io/kangxianshenazurewebapp
+          ports:
+          - containerPort: 80
